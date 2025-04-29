@@ -2,7 +2,7 @@ package org.example.Player;
 
 import java.util.Objects;
 
-public abstract class Player {
+public abstract class Player implements Comparable<Player> {
     protected String name;
     protected String team;
     protected String position;
@@ -12,15 +12,19 @@ public abstract class Player {
     protected int cardsReceived;
     protected int minutesPlayed;
 
-    public void updateStats(){
+    public void updateStats() {
         //TODO
     }
-    public void viewStats(){
-        //TODO
+
+    public void viewStats() {
+        System.out.printf("%s%s%n%s%s%n%s%s%n%s%d%n%s%d%n%s%d%n%s%d%n%s%d",
+                "Name: ", name, "Team: ", team, "Position: ", position, "Goals: ", goals,
+                "Assists: ", assists, "Matches Played: ", matchesPlayed,
+                "Cards Received: ",cardsReceived, "Total Minutes Played: ", minutesPlayed);
     }
-    public int compareStats(Player otherPlayer){
-        //TODO
-        return 0;
+
+    public int compareTo(Player other) {
+        return Integer.compare(goals,other.getGoals());
     }
 
     public Player() {
@@ -33,6 +37,7 @@ public abstract class Player {
         this.cardsReceived = 0;
         this.minutesPlayed = 0;
     }
+
     public Player(String name, String team, String position, int goals, int assists, int matchesPlayed, int cardsReceived, int minutesPlayed) {
         this.name = name;
         this.team = team;

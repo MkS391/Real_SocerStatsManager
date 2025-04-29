@@ -11,15 +11,18 @@ public class Analyst extends User implements StatPrintable {
     private Map<String, String> teamReports;
 
     public String generateReport(){
+       //TODO
         return "";
     }
 
     @Override
     public String generateReport(Player player) {
+        //TODO
         return "";
     }
 
     public void viewStats(){
+        //TODO
     }
 
     public Analyst() {

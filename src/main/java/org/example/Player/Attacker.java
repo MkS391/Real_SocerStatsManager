@@ -13,10 +13,11 @@ public class Attacker extends Player {
 
     @Override
     public void viewStats() {
-        //TODO
+        super.viewStats();
+        System.out.println("\nShots Taken: " + shotsTaken);
     }
 
-    public Attacker() {
+    public Attacker(String leoMessi, String interMiami, String forward, int i, int i1, int i2, int i3, int i4) {
         super();
         this.shotsTaken = 0;
         this.passesMade = 0;
@@ -70,4 +71,5 @@ public class Attacker extends Player {
     public void setPassesMade(int passesMade) {
         this.passesMade = passesMade;
     }
+
 }

@@ -8,18 +8,23 @@ public class StatsEditor extends User {
     private Stack<String> statUpdateHistory;
 
     public void addstats() {
+        //TODO
     }
 
     public void updateStats() {
+        //TODO
     }
 
     public void viewStats() {
+        //TODO
     }
 
     public void readStatsFromFile() {
+        //TODO
     }
 
     public void writeStatsToFile() {
+        //TODO
     }
 
     public StatsEditor() {

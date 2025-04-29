@@ -9,8 +9,10 @@ public class RegularUser extends User {
     private ArrayList<Player> favoritePlayers;
 
     public void viewSimpleStats(Player player){
+        //TODO
     }
     public void favoritePlayer(){
+        //TODO
     }
 
     public RegularUser() {

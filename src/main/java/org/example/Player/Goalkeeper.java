@@ -2,17 +2,18 @@ package org.example.Player;
 
 import java.util.Objects;
 
-public class Goalkeeper extends Player{
+public class Goalkeeper extends Player {
     private int cleanSheets;
     private int savesMade;
     private int totalShotsFaced;
 
-    public double savePercentage(){
+    public double savePercentage() {
         //TODO
         return 0.0;
     }
+
     @Override
-    public void viewStats(){
+    public void viewStats() {
         //TODO
     }
 
@@ -22,6 +23,7 @@ public class Goalkeeper extends Player{
         this.savesMade = 0;
         this.totalShotsFaced = 0;
     }
+
     public Goalkeeper(int cleanSheets, int savesMade, int totalShotsFaced) {
         super();
         this.cleanSheets = cleanSheets;

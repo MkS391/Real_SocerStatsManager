@@ -3,6 +3,7 @@ package org.example.Player;
 import java.util.Objects;
 
 public class Defender extends Player{
+
     private int cleanSheets;
     private int tacklesWon;
     private int tacklesLost;

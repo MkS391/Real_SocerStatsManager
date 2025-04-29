@@ -12,18 +12,21 @@ public abstract class User {
     private String role;
 
     public void viewStats(){
+        //TODO
     }
     public int comparePlayer(Player player1, Player player2){
+        //TODO
         return 0;
     }
     public void login(){
-
+        //TODO
     }
     public void displayLeaderboardByGoals(List<Player> players){
-
+        //TODO
     }
 
     public void displayLeaderboard(List<Player> players, Comparator<Player> comparator){
+        //TODO
     }
 
     public User() {
