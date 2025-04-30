@@ -7,14 +7,21 @@ public class Midfielder extends Player {
     private int passesMade;
     private int passesAttempted;
 
+    /**
+     * calculates the pass accuracy of the players
+     * @return a percentage of the pass accuracy
+     */
     public double passAccuracy(){
-        //TODO
-        return 0.0;
+        return (double) passesMade / passesAttempted * 100;
     }
 
+    /**
+     * displays every stat for a midfielder
+     */
     @Override
     public void viewStats(){
-        //TODO
+        super.viewStats();
+        System.out.printf("%n%s%d%n%s%d%n%s%f", "Recoveries: ", recoveries, "Passes: ", passesMade, "Pass Accuracy: ", passAccuracy());
     }
 
     public Midfielder() {

@@ -7,14 +7,22 @@ public class Goalkeeper extends Player {
     private int savesMade;
     private int totalShotsFaced;
 
+    /**
+     * calculates the save percentage (saves made/ shots faced)
+     * @return a percentage of saves made
+     */
     public double savePercentage() {
-        //TODO
-        return 0.0;
+        return (double) savesMade / totalShotsFaced * 100;
     }
 
+    /**
+     * displays all the stats for a goalkeeper
+     */
     @Override
     public void viewStats() {
-        //TODO
+        super.viewStats();
+        System.out.printf("%n%s%d%n%s%d%n%s%d%n%s%f","Clean Sheets: ", cleanSheets, "Saves: ", savesMade,
+                "Shots Faced: ", totalShotsFaced, "Save Percentage: ", savePercentage());
     }
 
     public Goalkeeper() {

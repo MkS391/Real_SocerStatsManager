@@ -12,8 +12,12 @@ public abstract class Player implements Comparable<Player> {
     protected int cardsReceived;
     protected int minutesPlayed;
 
-    public void updateStats() {
-        //TODO
+    public void updateStats(int goals, int assists, int matchesPlayed, int cardsReceived, int minutesPlayed) {
+       this.goals = goals;
+       this.assists = assists;
+       this.matchesPlayed = matchesPlayed;
+       this.cardsReceived = cardsReceived;
+       this.minutesPlayed = minutesPlayed;
     }
 
     public void viewStats() {

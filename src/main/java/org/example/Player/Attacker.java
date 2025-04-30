@@ -6,22 +6,24 @@ public class Attacker extends Player {
     private int shotsTaken;
     private int passesMade;
 
+    /**
+     * calculates the rate goal conversion (goals / shots taken)
+     * @return a percentage of how many goals a player has scored over the number of shots he has taken
+     */
     public double goalConversionRate() {
-        //TODO
-        return 0.0;
+        return (double) goals /shotsTaken * 100;
     }
 
+    /**
+     * displays every stat for an attacker
+     */
     @Override
     public void viewStats() {
         super.viewStats();
-        System.out.println("\nShots Taken: " + shotsTaken);
+        System.out.printf("%n%s%d%n%s%d%n%s%f","Shots Taken: ", shotsTaken,"Passes Made", passesMade,"Goal conversion rate: ", goalConversionRate());
+
     }
 
-    public Attacker(String leoMessi, String interMiami, String forward, int i, int i1, int i2, int i3, int i4) {
-        super();
-        this.shotsTaken = 0;
-        this.passesMade = 0;
-    }
     public Attacker(int shotsTaken, int passesMade) {
         super();
         this.shotsTaken = shotsTaken;
