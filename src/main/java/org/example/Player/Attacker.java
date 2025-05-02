@@ -20,7 +20,7 @@ public class Attacker extends Player {
     @Override
     public void viewStats() {
         super.viewStats();
-        System.out.printf("%n%s%d%n%s%d%n%s%f","Shots Taken: ", shotsTaken,"Passes Made", passesMade,"Goal conversion rate: ", goalConversionRate());
+        System.out.printf("%n%s%d%n%s%d%n%s%.2f","Shots Taken: ", shotsTaken,"Passes Made: ", passesMade,"Goal conversion rate: ", goalConversionRate());
 
     }
 

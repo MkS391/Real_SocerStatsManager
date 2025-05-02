@@ -21,10 +21,10 @@ public abstract class Player implements Comparable<Player> {
     }
 
     public void viewStats() {
-        System.out.printf("%s%s%n%s%s%n%s%s%n%s%d%n%s%d%n%s%d%n%s%d%n%s%d",
-                "Name: ", name, "Team: ", team, "Position: ", position, "Goals: ", goals,
-                "Assists: ", assists, "Matches Played: ", matchesPlayed,
-                "Cards Received: ",cardsReceived, "Total Minutes Played: ", minutesPlayed);
+        System.out.printf("%s%s%s%s%s%s%s%d%s%d%s%d%s%d%s%d",
+                "Name: ", name, "\nTeam: ", team, "\nPosition: ", position, "\nGoals: ", goals,
+                "\nAssists: ", assists, "\nMatches Played: ", matchesPlayed,
+                "\nCards Received: ",cardsReceived, "\nTotal Minutes Played: ", minutesPlayed);
     }
 
     public int compareTo(Player other) {

@@ -2,6 +2,7 @@ package org.example.User;
 
 import org.example.Player.Player;
 
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
@@ -11,22 +12,39 @@ public abstract class User {
     private String password;
     private String role;
 
-    public void viewStats(){
-        //TODO
+    public void viewStats(Player player){
+       player.viewStats();
     }
-    public int comparePlayer(Player player1, Player player2){
-        //TODO
-        return 0;
+    public int comparePlayer(Player player1, Player player2, String stat){
+        return switch (stat.toLowerCase()) {
+            case "goals" -> Integer.compare(player2.getGoals(), player1.getGoals());
+            case "assists" -> Integer.compare(player2.getAssists(), player1.getAssists());
+            case "cards" -> Integer.compare(player2.getCardsReceived(), player1.getCardsReceived());
+            case "matches played" -> Integer.compare(player2.getMinutesPlayed(), player1.getMatchesPlayed());
+            default -> throw new IllegalArgumentException("Stat not recognized");
+        };
     }
-    public void login(){
-        //TODO
+    public boolean login(String inputUsername, String inputPassword){
+        return this.username.equals(inputUsername) && this.password.equals(inputPassword);
     }
     public void displayLeaderboardByGoals(List<Player> players){
-        //TODO
+        players.sort((p1, p2) -> Integer.compare(p2.getGoals(),p1.getGoals()));
+
+        System.out.println("Goals Leaderboard: ");
+        for (int i = 0; i < players.size(); i++){
+            Player p = players.get(i);
+            System.out.println((i + 1) + "." + p.getName() + ", " + p.getGoals() + "Goals");
+        }
     }
 
     public void displayLeaderboard(List<Player> players, Comparator<Player> comparator){
-        //TODO
+        Collections.sort(players, comparator);
+
+        System.out.println("Leaderboard: ");
+
+        for (int i = 0; i < players.size(); i++){
+            System.out.println((i +1) + "." + players.get(i).toString());
+        }
     }
 
     public User() {
