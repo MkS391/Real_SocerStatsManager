@@ -42,6 +42,10 @@ public abstract class Player implements Comparable<Player> {
         this.minutesPlayed = 0;
     }
 
+    public Player(String name) {
+        this.name = name;
+    }
+
     public Player(String name, String team, String position, int goals, int assists, int matchesPlayed, int cardsReceived, int minutesPlayed) {
         this.name = name;
         this.team = team;
