@@ -24,6 +24,12 @@ public class Attacker extends Player {
 
     }
 
+    public Attacker() {
+        super();
+        this.shotsTaken = 0;
+        this.passesMade = 0;
+    }
+
     public Attacker(int shotsTaken, int passesMade) {
         super();
         this.shotsTaken = shotsTaken;
