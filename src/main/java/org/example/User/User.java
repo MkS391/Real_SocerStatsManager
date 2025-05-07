@@ -12,9 +12,21 @@ public abstract class User {
     private String password;
     private String role;
 
+    /**
+     * displays the stats of a player
+     * @param player the player in question
+     */
     public void viewStats(Player player){
        player.viewStats();
     }
+
+    /**
+     * compares 2 players based on some simple stats
+     * @param player1 the first player who is compared
+     * @param player2 the second player who is compared
+     * @param stat the stat on which they are compared
+     * @return the players in a new order
+     */
     public int comparePlayer(Player player1, Player player2, String stat){
         return switch (stat.toLowerCase()) {
             case "goals" -> Integer.compare(player2.getGoals(), player1.getGoals());
@@ -24,9 +36,21 @@ public abstract class User {
             default -> throw new IllegalArgumentException("Stat not recognized");
         };
     }
+
+    /**
+     * a way to access the app
+     * @param inputUsername your username
+     * @param inputPassword your password
+     * @return true if you are allowed to login, false if not
+     */
     public boolean login(String inputUsername, String inputPassword){
         return this.username.equals(inputUsername) && this.password.equals(inputPassword);
     }
+
+    /**
+     * displays a leaderboard of players ranked on their goals
+     * @param players the players who get ranked
+     */
     public void displayLeaderboardByGoals(List<Player> players){
         players.sort((p1, p2) -> Integer.compare(p2.getGoals(),p1.getGoals()));
 
@@ -37,6 +61,11 @@ public abstract class User {
         }
     }
 
+    /**
+     * displays leaderboard based on a comparing method
+     * @param players the players who get compared
+     * @param comparator the method of comparison
+     */
     public void displayLeaderboard(List<Player> players, Comparator<Player> comparator){
         Collections.sort(players, comparator);
 

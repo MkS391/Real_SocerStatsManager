@@ -17,12 +17,22 @@ public class RegularUser extends User {
         super();
         this.favoritePlayers = favoritePlayers;
     }
+
+    /**
+     * displays basic stats: Goals, Assists and Team of a player
+     * @param player the player whose stats are displayed
+     */
     public void viewSimpleStats(Player player){
         System.out.println(player.getName());
         System.out.println("\nTeam: " + player.getTeam());
         System.out.println("\nGoals: " + player.getGoals());
         System.out.println("\nAssists: " + player.getAssists());
     }
+
+    /**
+     * Adds a player to the list of favorite players
+     * @param player the player who gets added
+     */
     public void addFavoritePlayer(Player player) {
         if (!favoritePlayers.contains(player)) {
             favoritePlayers.add(player);
@@ -32,6 +42,9 @@ public class RegularUser extends User {
         }
     }
 
+    /**
+     * displays the favorite players
+     */
     public void viewFavoritePlayers() {
         System.out.println("Favorite Players:");
         for (Player p : favoritePlayers) {

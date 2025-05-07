@@ -12,6 +12,12 @@ public class StatsEditor extends User {
     private boolean statsEditable;
     private Stack<String> statUpdateHistory;
 
+    /**
+     * adds stats to a player directly
+     * @param player the player itself
+     * @param statType the type of stat you want to add
+     * @param value the value of the stat
+     */
     public void addstats(Player player, String statType, int value) {
         if (!statsEditable) {
             System.out.println("Stats editing is disabled.");
@@ -36,6 +42,9 @@ public class StatsEditor extends User {
         statUpdateHistory.push("Updated " + statType + " for " + player.getName() + " by " + value);
     }
 
+    /**
+     * shows older updates
+     */
     public void viewUpdateHistory() {
         if (statUpdateHistory.isEmpty()) {
             System.out.println("No updates yet.");
@@ -46,12 +55,21 @@ public class StatsEditor extends User {
         }
     }
 
+    /**
+     * displays stats of a player
+     * @param players the player in question
+     */
     public void viewStats(List<Player> players) {
         for (Player player : players){
             player.viewStats();
         }
     }
 
+    /**
+     * takes data from a csv file and puts in the variables to store them
+     * @param filename the file that is getting read
+     * @return a player with new stats
+     */
     public List<Player> readStatsFromFile(String filename) {
         List<Player> players = new ArrayList<>();
 
@@ -103,6 +121,11 @@ public class StatsEditor extends User {
         return players;
     }
 
+    /**
+     * puts the stats of a player in a csv file to store it
+     * @param filename the file where the stats are stored
+     * @param players the players whose stats are stored
+     */
     public void writePlayersToFile(String filename, List<Player> players) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
             for (Player p : players) {

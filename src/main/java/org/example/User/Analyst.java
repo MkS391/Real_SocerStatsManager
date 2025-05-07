@@ -12,7 +12,7 @@ public class Analyst extends User implements StatPrintable {
     private Map<String, String> teamReports;
 
     /**
-     *generates a report about a player during his season
+     *generates and displays a report about a player during his season
      * @param player the player in question
      * @return a report of his stats
      */
@@ -58,6 +58,10 @@ public class Analyst extends User implements StatPrintable {
         return report.toString();
     }
 
+    /**
+     * generates a report for a team giving the top goalscorer of the team
+     * @param players a list of players in the team
+     */
     @Override
     public void generateReport(List<Player> players) {
         Map<String, Integer> teamGoals = new HashMap<>();
@@ -91,12 +95,23 @@ public class Analyst extends User implements StatPrintable {
         }
     }
 
-    public void addReport(String teamName, String reportContent) {
-        if (canCreateReport) {
-            teamReports.put(teamName, reportContent);
+    /**
+     * displays a report generated for a team
+     * @param teamName the team in question
+     * @return a string containing a team report
+     */
+    public String viewReport(String teamName) {
+        if (teamReports.containsKey(teamName)) {
+            return teamReports.get(teamName);
+        } else {
+            return "No report available for team: " + teamName;
         }
     }
 
+    /**
+     * displays the stats of a selected player
+     * @param players the player in question
+     */
     public void viewStats(List<Player> players) {
         for (Player player : players) {
             player.viewStats();
