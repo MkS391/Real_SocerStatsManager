@@ -127,7 +127,7 @@ public class StatsEditor extends User {
      * @param players the players whose stats are stored
      */
     public void writePlayersToFile(String filename, List<Player> players) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(String.valueOf(filename)))) {
             for (Player p : players) {
                 StringBuilder line = new StringBuilder();
                 line.append(p.getName()).append(",");

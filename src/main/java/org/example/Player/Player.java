@@ -2,7 +2,7 @@ package org.example.Player;
 
 import java.util.Objects;
 
-public abstract class Player implements Comparable<Player> {
+public class Player implements Comparable<Player> {
     protected String name;
     protected String team;
     protected String position;

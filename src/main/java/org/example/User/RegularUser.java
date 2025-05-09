@@ -18,6 +18,10 @@ public class RegularUser extends User {
         this.favoritePlayers = favoritePlayers;
     }
 
+    public RegularUser(String username, String password) {
+        super(username, password, "Regular User");
+    }
+
     /**
      * displays basic stats: Goals, Assists and Team of a player
      * @param player the player whose stats are displayed
